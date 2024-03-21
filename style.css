@@ -53,13 +53,13 @@
     background-color: purple;
 }
 .paint li:nth-child(8) {
-    background-color: pink;
+    background-color: #ff7189;
 }
 .paint li:nth-child(9) {
     background-color: black;
 }
 .paint li:nth-child(10) {
-    background-color: white;
+    background-color: gray;
 }
 .left img{
     width: 100%;
@@ -171,4 +171,20 @@
 }
 .checked{
     opacity: 0.4;
+}
+p,li{
+    cursor: pointer;
+}
+li{
+    position: relative;
+}
+.active::after{
+    content: '';
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    display: block;
+    border: 1px solid black;
+    left: -4px;
+    top: -4px;
 }

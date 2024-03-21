@@ -2,6 +2,9 @@ let todolist = []
 let input = document.querySelector('input')
 let addbtn = document.querySelector('.btn-text')
 let todolistelement = document.querySelector('.todo-list')
+let carentcollor = "black"
+let allcollor = document.querySelector('ul')
+let allli = document.querySelectorAll('li')
 function getdata () {
     let data = localStorage.getItem('Todolist')
     let converterdata = JSON.parse(data)
@@ -56,5 +59,17 @@ todolistelement.addEventListener('click',function (event) {
      render(todolist)
      savedata()
     }
+    if(event.target.closest('p')) {
+        event.target.style.color = carentcollor
+    }
    }
+})
+allcollor.addEventListener('click', function (event) {
+    if(event.target.closest('li')) {
+        allli.forEach(li=>{
+            li.classList.remove("active")
+        })
+        carentcollor = event.target.dataset.color
+        event.target.classList.add("active")
+    }
 })
